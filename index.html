@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба3</title>
+    <script>
+    function result(){
+        var IP = document.forms["form"].elements["IP"].value;
+        var ip4 = /\b(\d{1,3}\.){3}\d{1,3}\b/;
+        var ip6 = /\b[0-9a-f]{1,4}(:[0-9a-f]{1,4}){7}\b/i;
+        var IP4 = IP.match(ip4);
+        var IP6 = IP.match(ip6);
+     if(IP4){
+        document.write('Это IP4');
+     } else if(IP6){
+        document.write('Это IP6');
+     } else{
+        document.write("IP не является данными версиями");
+     }
+     }
+    </script>
+</head>
+<body>
+    <form id="form">
+        <label>Введите IP:</label>
+        <input type="text" id="IP">
+        <input type="submit" onclick="result()" value="Отправить">
+    </form>
+</body>
+</html>
